@@ -1,18 +1,11 @@
 
-body{
-	margin: 0;
-	background-image: 
+html{
+	background-color: DarkGrey;
 }
 
-.barre_noir{
+body{
+	margin: 0; 
 	position: relative;
-	background-color: black;
-	height: 100vh;
-	width: 13%;
-	margin-left: auto;
-	opacity: 0.7;
-	z-index: 0;
-
 }
 
 header{
@@ -37,8 +30,7 @@ header{
 	z-index: 3;
 }
 
-span{
-	position: relative;
+#hamburger span{
 	width: 100%;
 	height: 4px;
 	background-color: white;
@@ -55,7 +47,7 @@ span#b2{
 }
 
 #barre_blanche{
-	position: absolute;
+	position: fixed;
 	background-color: white;
 	height: 100vh;
 	width: 0%;
@@ -64,11 +56,85 @@ span#b2{
 }
 
 #barre_rouge{
-	position: absolute;
+	position: fixed;
 	background-color: red;
 	height: 100vh;
 	width: 0%;
 	z-index: 1;
 	right: 0;
+}
 
+#nav{
+	display: none;
+	position: fixed;
+	z-index: 5;
+	margin-left: 10%;
+	top: 25%;
+}
+
+nav ul{
+	padding-left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 55vh;
+}
+
+
+#li1,#li2,#li3,#li4{
+	opacity: 0;
+	font-weight: bold;
+	font-family: 'lato', sans-serif;
+	list-style: none;
+	color: white;
+	font-size: 60pt;
+}
+
+#li1:hover{
+	padding-left: 20px;
+	transition: 0.3s;
+}
+#li2:hover{
+	padding-left: 20px;
+	transition: 0.3s;
+}
+#li3:hover{
+	padding-left: 20px;
+	transition: 0.3s;
+}
+#li4:hover{
+	padding-left: 20px;
+	transition: 0.3s;
+}
+
+nav a{
+	text-decoration: none;
+	color: white
+}
+
+#langue{
+	font-family: 'lato', sans-serif;
+	color: black;
+	position: fixed;
+	right: 65px; ;
+	top: 25%;
+	z-index: 6;
+	text-align: center;
+	width: 5%;
+
+}
+
+#langue div{
+	display: flex;
+	flex-direction: column;
+}
+
+#langue a{
+	text-decoration: none;
+	color: black;
+}
+
+#changer_langue{
+	padding-bottom: 50px;
+	border-bottom: 1px solid black;
 }

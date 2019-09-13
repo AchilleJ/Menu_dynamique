@@ -119,6 +119,13 @@ function open(){
 		fill: "forwards",
 		});
 
+	document.getElementById('nav').style.display = 'block';
+
+	navAnimation('li1',500,'normal');
+	navAnimation('li2',600,'normal');
+	navAnimation('li3',700,'normal');
+	navAnimation('li4',800,'normal');
+
 	hamburger.removeEventListener("mouseenter",animateBar);
 	hamburger.removeEventListener("mouseleave",animateBarReverse);
 }
@@ -181,7 +188,32 @@ function close(){
 		fill: "forwards",
 		});
 
+	navAnimation('li1',0,'reverse');
+	navAnimation('li2',0,'reverse');
+	navAnimation('li3',0,'reverse');
+	navAnimation('li4',0,'reverse');
+
+	document.getElementById('nav').style.display = 'none';
 
 	hamburger.addEventListener("mouseenter",animateBar);
 	hamburger.addEventListener("mouseleave",animateBarReverse);
 }
+
+
+
+function navAnimation(id,ndelay,RevORnot){
+
+	document.getElementById(id).animate([
+		{ opacity : 0, }, 
+		{ opacity : 0.9, }
+		], { 
+
+		duration: 400,
+		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+		delay: ndelay,
+		direction: RevORnot,
+		iterations: 1,
+		fill: "forwards",
+		});
+}
+
