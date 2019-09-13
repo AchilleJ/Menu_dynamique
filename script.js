@@ -1,13 +1,15 @@
 
 //2 bars joins
 
-bar1
+bar1 = document.getElementById("b1");
+bar2 = document.getElementById("b2");
+hamburger = document.getElementById('hamburger');
 
-document.getElementById('hamburger').addEventListener("mouseenter",animateBar);
-document.getElementById('hamburger').addEventListener("mouseleave",animateBarReverse);
+hamburger.addEventListener("mouseenter",animateBar);
+hamburger.addEventListener("mouseleave",animateBarReverse);
 
 function animateBar(){
-	document.getElementById("b1").animate([
+	bar1.animate([
 	{ transform: 'translateY(0px)' }, 
 	{ transform: 'translateY(8px)' }
 	], { 
@@ -18,7 +20,7 @@ function animateBar(){
 	fill: "forwards"
 	});
 
-	document.getElementById("b2").animate([
+	bar2.animate([
 	{ transform: 'translateY(0px)' }, 
 	{ transform: 'translateY(-8px)' }
 	], { 
@@ -32,7 +34,8 @@ function animateBar(){
 }
 
 function animateBarReverse(){
-	document.getElementById("b1").animate([
+
+	bar1.animate([
 	{ transform: 'translateY(8px)' }, 
 	{ transform: 'translateY(0px)' }
 	], { 
@@ -43,7 +46,7 @@ function animateBarReverse(){
 	fill: "forwards"
 	});
 
-	document.getElementById("b2").animate([
+	bar2.animate([
 	{ transform: 'translateY(-8px)' }, 
 	{ transform: 'translateY(0px)' }
 	], { 
@@ -60,9 +63,10 @@ function animateBarReverse(){
 document.getElementById('hamburger').addEventListener("click",croix);
 
 function croix(){
-	document.getElementById("b1").style.width = "100%"
-	document.getElementById("b1").animate([
-	{ transform: 'rotate(0deg) translateY(12px)' }, 
+
+	bar1.style.width = "100%"
+	bar1.animate([
+	{ transform: 'rotate(0deg)' }, 
 	{ transform: 'rotate(45deg) translateY(12px)'}
 	], { 
 
@@ -71,9 +75,10 @@ function croix(){
 	iterations: 1,
 	fill: "forwards",
 	});
+	bar1.style.backgroundColor = 'red'
 
-	document.getElementById("b2").animate([
-	{ transform: 'rotate(0deg) translateY(-10px)' }, 
+	bar2.animate([
+	{ transform: 'rotate(0deg)' }, 
 	{ transform: 'rotate(-45deg) translateY(-10px)'}
 	], { 
 
@@ -82,24 +87,47 @@ function croix(){
 	iterations: 1,
 	fill: "forwards"
 	});
-
+	bar2.style.backgroundColor = 'red'
 	open();
 }
 
 
 function open(){
-	document.getElementById('hamburger').removeEventListener("click",croix);
-	document.getElementById('hamburger').addEventListener("click",croixReverse);
+	hamburger.removeEventListener("click",croix);
+	hamburger.addEventListener("click",croixReverse);
 
-	document.getElementById('hamburger').removeEventListener("mouseenter",animateBar);
-	document.getElementById('hamburger').removeEventListener("mouseleave",animateBarReverse);
+	document.getElementById('barre_blanche').animate([
+		{ width : '0%' }, 
+		{ width : '13%' }
+		], { 
+
+		duration: 500,
+		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+		iterations: 1,
+		fill: "forwards",
+		});
+
+	document.getElementById('barre_rouge').animate([
+		{ width : '0%' }, 
+		{ width : '100%' }
+		], { 
+
+		duration: 800,
+		delay: 100,
+		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+		iterations: 1,
+		fill: "forwards",
+		});
+
+	hamburger.removeEventListener("mouseenter",animateBar);
+	hamburger.removeEventListener("mouseleave",animateBarReverse);
 }
 
 
 function croixReverse(){
-	document.getElementById("b1").style.width = "100%"
-	document.getElementById("b1").animate([
-	{ transform: 'rotate(0deg) translateY(10px)' }, 
+	bar1.style.width = "100%"
+	bar1.animate([
+	{ transform: 'rotate(0deg) ' }, 
 	{ transform: 'rotate(45deg) translateY(12px)'}
 	], { 
 
@@ -109,9 +137,10 @@ function croixReverse(){
 	direction: "reverse",
 	fill: "forwards"
 	});
+	bar1.style.backgroundColor = 'white';
 
-	document.getElementById("b2").animate([
-	{ transform: 'rotate(0deg) translateY(-8px)' }, 
+	bar2.animate([
+	{ transform: 'rotate(0deg) ' }, 
 	{ transform: 'rotate(-45deg) translateY(-10px)'}
 	], { 
 
@@ -121,13 +150,38 @@ function croixReverse(){
 	direction: "reverse",
 	fill: "forwards"
 	});
+	bar2.style.backgroundColor = 'white';
 	close()
 }
 
 function close(){
-	document.getElementById('hamburger').removeEventListener("click",croixReverse);
-	document.getElementById('hamburger').addEventListener("click",croix);
+	hamburger.removeEventListener("click",croixReverse);
+	hamburger.addEventListener("click",croix);
 
-	document.getElementById('hamburger').addEventListener("mouseenter",animateBar);
-	document.getElementById('hamburger').addEventListener("mouseleave",animateBarReverse);
+	document.getElementById('barre_rouge').animate([
+		{ width : '100%' }, 
+		{ width : '0%' }
+		], { 
+
+		duration: 600,
+		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+		iterations: 1,
+		fill: "forwards",
+		});
+
+	document.getElementById('barre_blanche').animate([
+		{ width : '13%' }, 
+		{ width : '0%' }
+		], { 
+
+		duration: 300,
+		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+		iterations: 1,
+		delay: 350,
+		fill: "forwards",
+		});
+
+
+	hamburger.addEventListener("mouseenter",animateBar);
+	hamburger.addEventListener("mouseleave",animateBarReverse);
 }
