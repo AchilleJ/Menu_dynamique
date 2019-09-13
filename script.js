@@ -119,12 +119,15 @@ function open(){
 		fill: "forwards",
 		});
 
+	document.getElementById('langue').style.display = 'block';
+	navAnimation('langue',500,'normal',400);
+
 	document.getElementById('nav').style.display = 'block';
 
-	navAnimation('li1',500,'normal');
-	navAnimation('li2',600,'normal');
-	navAnimation('li3',700,'normal');
-	navAnimation('li4',800,'normal');
+	navAnimation('li1',500,'normal',400);
+	navAnimation('li2',600,'normal',400);
+	navAnimation('li3',700,'normal',400);
+	navAnimation('li4',800,'normal',400);
 
 	hamburger.removeEventListener("mouseenter",animateBar);
 	hamburger.removeEventListener("mouseleave",animateBarReverse);
@@ -188,12 +191,15 @@ function close(){
 		fill: "forwards",
 		});
 
-	navAnimation('li1',0,'reverse');
-	navAnimation('li2',0,'reverse');
-	navAnimation('li3',0,'reverse');
-	navAnimation('li4',0,'reverse');
+	navAnimation('li1',0,'reverse',200);
+	navAnimation('li2',0,'reverse',200);
+	navAnimation('li3',0,'reverse',200);
+	navAnimation('li4',0,'reverse',200);
 
-	document.getElementById('nav').style.display = 'none';
+	setTimeout(function(){document.getElementById('nav').style.display = 'none';}, 200);
+
+	navAnimation('langue',0,'reverse',400);
+	setTimeout(function(){document.getElementById('langue').style.display = 'none';}, 400);
 
 	hamburger.addEventListener("mouseenter",animateBar);
 	hamburger.addEventListener("mouseleave",animateBarReverse);
@@ -201,14 +207,14 @@ function close(){
 
 
 
-function navAnimation(id,ndelay,RevORnot){
+function navAnimation(id,ndelay,RevORnot,duree){
 
 	document.getElementById(id).animate([
 		{ opacity : 0, }, 
-		{ opacity : 0.9, }
+		{ opacity : 0.9,}
 		], { 
 
-		duration: 400,
+		duration: duree,
 		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
 		delay: ndelay,
 		direction: RevORnot,

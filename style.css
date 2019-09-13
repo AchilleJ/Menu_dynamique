@@ -113,6 +113,8 @@ nav a{
 }
 
 #langue{
+	display: none;
+	opacity: 0;
 	font-family: 'lato', sans-serif;
 	color: black;
 	position: fixed;
@@ -135,6 +137,14 @@ nav a{
 }
 
 #changer_langue{
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 	border-bottom: 1px solid black;
+}
+
+#choix_langue{
+	height: 80px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
