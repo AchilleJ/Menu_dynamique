@@ -1,16 +1,12 @@
 
-html{
-	background-color: DarkGrey;
+.body_hamburger{
+	position: absolute;
+	margin: 0;
 }
 
-body{
-	margin: 0; 
-	position: relative;
-}
-
-header{
+.header_menu_hamburger{
 	position: fixed;
-	margin: 60px 0px 0 30px;
+	margin: 50px 0px 0 30px;
 	width: 93%;
 	z-index: 4;
 	display: flex;
@@ -28,6 +24,7 @@ header{
 	height: 20px;
 	width: 38px;
 	z-index: 3;
+	margin-left: auto;
 }
 
 #hamburger span{
@@ -64,7 +61,7 @@ span#b2{
 	right: 0;
 }
 
-#nav{
+#nav_hamburger{
 	display: none;
 	position: fixed;
 	z-index: 5;
@@ -72,7 +69,7 @@ span#b2{
 	top: 25%;
 }
 
-nav ul{
+#nav_hamburger ul{
 	padding-left: 0;
 	display: flex;
 	flex-direction: column;
@@ -84,7 +81,7 @@ nav ul{
 #li1,#li2,#li3,#li4{
 	opacity: 0;
 	font-weight: bold;
-	font-family: 'lato', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	list-style: none;
 	color: white;
 	font-size: 60pt;
@@ -107,7 +104,7 @@ nav ul{
 	transition: 0.3s;
 }
 
-nav a{
+#nav_hamburger a{
 	text-decoration: none;
 	color: white
 }
@@ -115,7 +112,7 @@ nav a{
 #langue{
 	display: none;
 	opacity: 0;
-	font-family: 'lato', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	color: black;
 	position: fixed;
 	right: 65px; ;
