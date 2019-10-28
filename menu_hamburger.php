@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="menu_dynamique/style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Cabin&display=swap">
 </head>
 <div class="body_hamburger">
