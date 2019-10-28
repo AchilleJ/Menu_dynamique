@@ -122,7 +122,7 @@ function open(){
 	document.getElementById('langue').style.display = 'block';
 	navAnimation('langue',500,'normal',400);
 
-	document.getElementById('nav_hamburger').style.display = 'block';
+	document.getElementById('nav').style.display = 'block';
 
 	navAnimation('li1',500,'normal',400);
 	navAnimation('li2',600,'normal',400);
@@ -196,7 +196,7 @@ function close(){
 	navAnimation('li3',0,'reverse',200);
 	navAnimation('li4',0,'reverse',200);
 
-	setTimeout(function(){document.getElementById('nav_hamburger').style.display = 'none';}, 200);
+	setTimeout(function(){document.getElementById('nav').style.display = 'none';}, 200);
 
 	navAnimation('langue',0,'reverse',400);
 	setTimeout(function(){document.getElementById('langue').style.display = 'none';}, 400);
